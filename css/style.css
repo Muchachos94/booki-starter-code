@@ -6,7 +6,7 @@
 }
 
 header {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 .nav-container {
   width: 100%;
   max-width: 1440px;
-  margin: 0 auto;
+  margin: -13px auto;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
@@ -48,16 +48,16 @@ body {
 /* Navigation */
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 68px;
   list-style: none;
   flex-wrap: nowrap;
+
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #000;
   font-weight: 400;
-  padding: 5px;
   height: 36px;
   display: flex;
   align-items: center;
@@ -73,8 +73,8 @@ body {
 .nav-links li a.active {
   color: #0065fc;
   border-top: 2px solid #0065fc;
+  
 }
-
 /* Section de recherche */
 .search-section {
   display: flex;
@@ -108,6 +108,8 @@ body {
   width: 100%;
   max-width: 377px;
   height: 49px;
+  border-right: none; /* supprime bordure droite par défaut */
+  padding-right: 1px; /* simule la bordure avec fond du bouton */
 }
 
 .search-icon {
@@ -154,12 +156,21 @@ body {
   font-weight: 500;
   font-family: "Raleway", sans-serif;
   cursor: pointer;
-  border: 1px solid #0065fc; /* Bordure bleue */
+  border: 11px solid #0065fc; /* Bordure bleue */
   border-left: none; /* pas de bordure côté gauche */
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   box-sizing: border-box;
 }
+
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    max-width: 377px;
+    width: 100%;
+  }
 
 .search-button i {
   display: none;
@@ -167,11 +178,12 @@ body {
 
 /* Filtres */
 .filters-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    /* flex-wrap: nowrap; */ /* Removed to allow wrapping */
+  }
 
 .filters-label {
   font-size: 18px;
@@ -180,24 +192,35 @@ body {
 }
 
 .filter-button {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 19px;
+  width: auto;
+  min-width: fit-content;
+  height: 50px;
+  padding: 4px 19px;
+  border-radius: 25px;
+  border: 2px solid #d9d9d9;
   font-size: 16px;
   font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   color: #000;
   background-color: white;
-  border: 2px solid #d9d9d9;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .filter-button i {
   color: #0065fc;
   font-size: 18px;
 }
+
+.filter-buttons {
+    display: flex;
+    /* flex-wrap: nowrap; */ /* Removed to allow wrapping */
+    gap: 10px;
+  }
 
 .filter-button:hover {
   background-color: #deebff;
@@ -210,37 +233,33 @@ body {
   gap: 10px;
   font-size: 16px;
   color: #000;
-  margin-top: 20px;
-}
-
-.availability-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  color: #000;
-  margin-top: 20px;
 }
 
 .info-icon {
-  width: 24px;
-  height: 24px;
-  border: 1px solid #f2f2f2;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
+    width: 24px;
+    height: 24px;
+    border: 1px solid #f2f2f2;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
 
 .info-icon i {
-  font-size: 10px; /* correspond visuellement à height: 10px */
-  width: 4px; /* largeur attendue */
-  color: #0065fc;
-  line-height: 1;
-  text-align: center;
-}
+    font-size: 10px;           /* légèrement plus grand, mais pas trop */
+    line-height: 1;            /* neutralise l'étirement vertical */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;               /* supprime le width: 4px ! */
+    height: auto;
+    color: #0065fc;
+  }
+
+
+
 
 General ***********/ * {
   font-family: "Raleway", sans-serif;
@@ -300,6 +319,8 @@ a {
 .neutral-star {
   color: var(--main-bg-color);
 }
+
+
 
 /****** Hebergements And Populaires ***********/
 .hebergements-and-populaires {
@@ -364,6 +385,11 @@ a {
   margin-bottom: 5px;
 }
 
+
+
+
+
+
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
@@ -372,6 +398,7 @@ a {
 @media (max-width: 1024px) {
   .main-container {
     padding: 0px;
+    gap: 15px;
   }
 
   .nav-container {
@@ -457,7 +484,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 30px;
+    gap: 35px;
     max-width: 1340px;
     margin: 0 auto;
     padding: 0 20px 20px 20px; /* top right bottom left */
@@ -507,17 +534,28 @@ a {
     font-weight: 700;
     color: #000;
   }
+  /* Conteneur autour du form + bouton, version mobile */
+.search-bar-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    max-width: 377px;
+    width: 100%;
+  }
   .search-button {
     width: 49px;
     height: 49px;
     background-color: #0065fc;
-    border: 1px solid #0065fc;
+    border: 11px solid #0065fc;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px #00000040;
+    margin-left: -1px; /* colle visuellement au champ */
+    flex-shrink: 0; /* empêche le bouton de se réduire */
   }
 
   .search-button .text {
@@ -535,4 +573,88 @@ a {
   .search-button i {
     display: inline;
   }
+
+  /* Filtres */
+
+  .filters-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .filters-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    align-self: flex-start;
+  }
+ 
+  .filter-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;   /* ✅ force le gap vertical */
+    column-gap: 10px;/* ✅ force le gap horizontal */
+  }
+
+.filter-button {
+    width: 100%;
+    height: 50px;
+    padding: 4px 19px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    border-radius: 25px;
+    border: 2px solid #d9d9d9;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    color: #000;
+    background-color: white;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  .filter-button i {
+    color: #0065fc;
+    font-size: 18px;
+    width: 18px;
+    text-align: center;
+  }
+
+  /* Informations supplémentaires */
+
+  .availability-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #000;
+    margin-top: 0;
+  }
+
+  .info-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #f2f2f2;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .info-icon i {
+    font-size: 10px;
+    height: 10px;
+    color: #0065fc;
+    line-height: 10px; /* même que la hauteur */
+    text-align: center;
+    display: block;
+  }
+
 }
