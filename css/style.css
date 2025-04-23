@@ -114,6 +114,8 @@ body {
 .search-input {
   border: none;
   outline: none;
+  justify-items: left;
+  padding-left: 20px;
   font-size: 1.125rem;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
@@ -460,6 +462,9 @@ footer {
   .activitecard img {
     height: 12.5rem;
   }
+  .activitecard h3.card-title {
+    font-size: 0.9rem;  
+    }
 
   footer {
     max-width: 90%;
@@ -626,6 +631,7 @@ footer {
   .activitecard h3.card-title {
     height: 100%;
   }
+  
 
   .activitecard img {
     height: 8.8125rem;
