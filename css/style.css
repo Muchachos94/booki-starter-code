@@ -9,6 +9,7 @@
 .fa-solid {
   color: var(--main-color);
 }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -31,6 +32,7 @@ body {
   min-width: 320px;
   font-family: "Raleway", sans-serif;
   overflow-x: hidden;
+  margin: auto;
 }
 
 .main-container {
@@ -58,7 +60,7 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 5.7vw;
+  gap: 82px;
   list-style: none;
   margin-bottom: 2.5%;
 }
@@ -249,9 +251,13 @@ body {
 }
 
 .hebergements-cards .card {
-  width: 15.645625rem;
-  height: 12.6875rem; /* A voir pour supprimer ou modifier */
+  width: 30%;
+  height: 207px;
   filter: drop-shadow(0rem 0.1875rem 0.9375rem rgba(0, 0, 0, 0.1));
+}
+
+.hebergements-cards a {
+    display: contents;
 }
 
 .hebergements-cards img {
@@ -263,8 +269,7 @@ body {
 }
 
 .hebergements-cards .card-content {
-  height: 8vh;
-  padding: 0 15px;
+  padding: 3%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -273,7 +278,6 @@ body {
 
 .hebergements-cards .card-title {
   font-size: 1rem;
-  margin-top: 1.2rem;
 }
 
 .hebergements-cards .card-subtitle {
@@ -303,9 +307,13 @@ body {
   gap: 1.875rem;
 }
 
+.populaires-cards a {
+    display: contents;
+}
+
 .populaires-cards .card {
   display: flex;
-  height: 18vh;
+  height: 146px;
   filter: drop-shadow(0rem 0.1875rem 0.9375rem rgba(0, 0, 0, 0.1));
 }
 
@@ -345,6 +353,10 @@ body {
 .activites-cards {
   display: flex;
   gap: 1.875rem;
+}
+
+.activites-cards a {
+    display: contents;
 }
 
 .activitecard {
@@ -403,6 +415,25 @@ footer {
 .footer-section a:hover {
   text-decoration: underline;
 }
+
+
+@media (min-width: 1025px) and (max-width: 1080px) {
+    
+    .hebergements-cards .card {
+        width: 29%;
+    }
+
+    .hebergements-cards .card-title {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1081px) and (max-width: 1182px) {
+    .hebergements-cards .card-title {
+        font-size: 0.9rem;
+    }
+}
+
 
 /****************************************************************** Tablette ****************************************************************/
 
@@ -562,7 +593,7 @@ footer {
   }
 
   .filter-button {
-    width: 10rem; /* A voir pour supprimer ou modifier */
+    width: 10rem;
   }
 
   .filter-button i {
@@ -591,6 +622,9 @@ footer {
   .hebergements-cards .card {
     width: 100%;
   }
+  .hebergements-cards .card-content {
+    gap: 0.3rem;
+    }
 
   .hebergements-cards img {
     height: 59%;
